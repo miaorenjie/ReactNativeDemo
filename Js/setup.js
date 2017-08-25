@@ -12,7 +12,7 @@ import {
     View,
 } from 'react-native';
 
-import Navigator from 'react-native-deprecated-custom-components'
+import {Navigator} from 'react-native-deprecated-custom-components'
 import TabNavigator from 'react-native-tab-navigator'
 import Home from '../Js/home'
 import Haitao from '../Js/haitao'
@@ -37,7 +37,17 @@ export default class setup extends Component {
                 badgeText="1"
                 selectedTitleStyle={{color:'red'}}
                 onPress={() => this.setState({ selectedTab: selectedTab})}>
-                <Component/>
+                <Navigator
+                     initialRoute={{
+                         name:selectedTab,
+                         component:Component
+                     }}
+
+                     renderScene={(route, navigator) => {
+                         let Component = route.component;
+                         return <Component {...route.params} navigator={navigator} />
+                     }}
+                 />
             </TabNavigator.Item>
         )
     }

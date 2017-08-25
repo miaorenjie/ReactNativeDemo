@@ -14,30 +14,30 @@ import {
 } from 'react-native';
 
 import JumpPage from '../Js/JumpPage'
+
 export default class Home extends Component {
 
 
     _pressButtoon(){
         const { navigator} = this.props;
-        if (navigator) {
+
             navigator.push({
                 name:'JumpPage',
                 component:JumpPage,
             })
-        }
+
     }
     render() {
         return (
          <View style={styles.container}>
              <Text onPress={()=>{
-                 const { navigator} = this.props;
-                 if (navigator) {
-                     navigator.push({
-                         name:'JumpPage',
+                 console.log("点击了");
+
+                     this.props.navigator.push({
                          component:JumpPage,
                      })
-                 }
-             }}>asd</Text>
+
+             }} style={{fontSize:60}}>asd</Text>
             <Image source={require('./Img/asd.png')} resizeMode="contain"/>
          </View>
         );

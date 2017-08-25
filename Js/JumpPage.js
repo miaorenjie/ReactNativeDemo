@@ -18,7 +18,11 @@ export default class JumpPage extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>跳转页面</Text>
+                <Text style={{fontSize:50}} onPress={()=>{
+                    this.props.navigator.pop()
+
+                 }
+                }>跳转页面</Text>
                 <Image source={require('./Img/asd.png')} resizeMode="contain"/>
             </View>
         );
