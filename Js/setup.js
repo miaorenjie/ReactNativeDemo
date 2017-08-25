@@ -22,7 +22,8 @@ export default class setup extends Component {
     constructor(props){
         super(props);
         this.state={
-           selectedTab:'home'
+           selectedTab:'home',
+            tabBarHeight:55
         };
     }
     renderItem(title,selectedTab,imgUrl,selectedImgUrl,Component){
@@ -75,7 +76,7 @@ export default class setup extends Component {
 
     render() {
         return (
-                <TabNavigator>
+                <TabNavigator tabBarStyle={{height:this.state.tabBarHeight}} sceneStyle={{paddingBottom:this.state.tabBarHeight}}>
                     {this.renderItem("首页","home",'./Img/asd.png','./Img/asd.png',Home)}
                     {this.renderItem("海淘","haitao",'./Img/asd.png','./Img/asd.png',Haitao)}
                     {this.renderItem("小时","xiaoshi",'./Img/asd.png','./Img/asd.png',Xiaoshi)}

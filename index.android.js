@@ -4,10 +4,10 @@
  * @flow
  */
 
-import jump from './Js/jump'
+import setup from './Js/setup'
 import {
   AppRegistry,
 } from 'react-native';
 
 
-AppRegistry.registerComponent('ReactDemo', () =>jump );
+AppRegistry.registerComponent('ReactDemo', () =>setup );
