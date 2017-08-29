@@ -87,7 +87,6 @@ export default class setup extends Component {
                     {/*{this.renderItem("海淘","haitao",Haitao)}*/}
                     {/*{this.renderItem("小时","xiaoshi",Xiaoshi)}*/}
                 </TabNavigator>
-
         );
     }
 }

@@ -62,6 +62,11 @@ export default class Home extends Component {
             })
     }
     render() {
+        fetch("http://blog.csdn.net/u010046908/article/details/50916511")
+            .then((response) => response.text())
+            .then((responseText)=>{
+                console.log(responseText);
+            }).done();
         return (
             <ViewPager
                 style={{height:500}}
